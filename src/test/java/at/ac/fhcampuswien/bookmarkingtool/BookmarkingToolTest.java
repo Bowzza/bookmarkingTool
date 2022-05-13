@@ -11,13 +11,13 @@ public class BookmarkingToolTest {
 
         // Arrange
         String url = "https://www.fh-campuswien.ac.at/";
-        boolean expectedResult = true;
-        boolean result;
+        String expectedResult = "https://www.fh-campuswien.ac.at/";
+        String result;
         BookmarkingTool bookmarkingTool = new BookmarkingTool();
 
         // Act
         bookmarkingTool.bookmarkUrl(url);
-        result = bookmarkingTool.getUrlList().contains(url);
+        result = bookmarkingTool.findUrl(url);
 
         // Assert
         assertEquals(expectedResult, result);
