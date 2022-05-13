@@ -8,7 +8,7 @@ public class BookmarkingTool {
     private List<String> urlList = new ArrayList<>();
 
     public void bookmarkUrl(String url) {
-        throw new UnsupportedOperationException();
+        urlList.add(url);
     }
 
     public List<String> getUrlList() {
