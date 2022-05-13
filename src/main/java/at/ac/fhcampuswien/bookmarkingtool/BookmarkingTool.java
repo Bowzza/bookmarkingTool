@@ -1,21 +1,23 @@
 package at.ac.fhcampuswien.bookmarkingtool;
 
+import at.ac.fhcampuswien.bookmarkingtool.model.Url;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class BookmarkingTool {
 
-    private List<String> urlList = new ArrayList<>();
+    private List<Url> urlList = new ArrayList<>();
 
-    public void bookmarkUrl(String url) {
+    public void bookmarkUrl(Url url) {
         urlList.add(url);
     }
 
-    public List<String> getUrlList() {
+    public List<Url> getUrlList() {
         return urlList;
     }
 
-    public String findUrl(String url) {
+    public Url findUrl(Url url) {
         return urlList.get(urlList.indexOf(url));
     }
 }

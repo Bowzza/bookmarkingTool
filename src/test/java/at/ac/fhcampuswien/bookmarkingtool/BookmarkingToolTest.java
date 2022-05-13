@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.bookmarkingtool;
 
+import at.ac.fhcampuswien.bookmarkingtool.model.Url;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,9 +11,9 @@ public class BookmarkingToolTest {
     public void ensureBookmarkingValidUrl() {
 
         // Arrange
-        String url = "https://www.fh-campuswien.ac.at/";
-        String expectedResult = "https://www.fh-campuswien.ac.at/";
-        String result;
+        Url url = new Url("https://www.fh-campuswien.ac.at/");
+        Url expectedResult = new Url("https://www.fh-campuswien.ac.at/");
+        Url result;
         BookmarkingTool bookmarkingTool = new BookmarkingTool();
 
         // Act
@@ -20,6 +21,6 @@ public class BookmarkingToolTest {
         result = bookmarkingTool.findUrl(url);
 
         // Assert
-        assertEquals(expectedResult, result);
+        assertEquals(expectedResult.getUrl(), result.getUrl());
     }
 }
