@@ -15,4 +15,7 @@ public class BookmarkingTool {
         return urlList;
     }
 
+    public String findUrl(String url) {
+        return urlList.get(urlList.indexOf(url));
+    }
 }
