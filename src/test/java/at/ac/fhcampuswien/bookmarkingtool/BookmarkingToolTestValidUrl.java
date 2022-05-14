@@ -43,4 +43,20 @@ public class BookmarkingToolTestValidUrl {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @ParameterizedTest
+    @CsvSource({"://www.fh-campuswien.ac.at/, no protocol: ://www.fh-campuswien.ac.at/", "htt://www.fh-campuswien.ac.at/, unknown protocol: htt", "httpswww.fh-campuswien.ac.at/, no protocol: httpswww.fh-campuswien.ac.at/,", "https/:/www.fh-campuswien.ac.at/, no protocol: https/:/www.fh-campuswien.ac.at/", "https://www.fh-campuswi^n.ac.at/, Illegal character in authority at index 8: https://www.fh-campuswi^n.ac.at/", "' ', 'no protocol:  '", "https://www.fh-cam puswien.ac.at/, Illegal character in authority at index 8: https://www.fh-cam puswien.ac.at/", "'', 'no protocol: '"})
+    public void ensureBookmarkingUrlWithIllegalCharactersNoProtocolUnknownProtocol(String input, String expectedResult) {
+        // Arrange
+        Url url = new Url(input);
+        String result;
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.bookmarkUrl(url));
+
+        // Act
+        result = exception.getMessage();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
