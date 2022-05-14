@@ -23,4 +23,21 @@ public class BookmarkingToolTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureBookmarkingWithNull() {
+
+        // Arrange
+        Url url = null;
+        int expectedResult = 0;
+        int result;
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(url);
+        result = bookmarkingTool.getUrlList().size();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
