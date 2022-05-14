@@ -29,13 +29,13 @@ public class BookmarkingToolTest {
 
         // Arrange
         Url url = null;
-        int expectedResult = 0;
-        int result;
+        String expectedResult = "Url must not be null";
+        String result;
         BookmarkingTool bookmarkingTool = new BookmarkingTool();
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.bookmarkUrl(url));
 
         // Act
-        bookmarkingTool.bookmarkUrl(url);
-        result = bookmarkingTool.getUrlList().size();
+        result = exception.getMessage();
 
         // Assert
         assertEquals(expectedResult, result);
