@@ -2,24 +2,27 @@ package at.ac.fhcampuswien.bookmarkingtool;
 
 import at.ac.fhcampuswien.bookmarkingtool.model.Url;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class BookmarkingToolTest {
+public class BookmarkingToolTestValidUrl {
 
-    @Test
-    public void ensureBookmarkingValidUrl() {
+
+    @ParameterizedTest
+    @CsvSource({"https://www.fh-campuswien.ac.at/, https://www.fh-campuswien.ac.at/", "http://www.fh-campuswien.ac.at/, http://www.fh-campuswien.ac.at/"})
+    public void ensureBookmarkingValidUrl(String input, String expectedResult) {
 
         // Arrange
-        Url url = new Url("https://www.fh-campuswien.ac.at/");
-        String expectedResult = new Url("https://www.fh-campuswien.ac.at/").getUrl();
+        Url url = new Url(input);
         String result;
         BookmarkingTool bookmarkingTool = new BookmarkingTool();
 
         // Act
         bookmarkingTool.bookmarkUrl(url);
         result = bookmarkingTool.getUrlList().get(0).getUrl();
-
         // Assert
         assertEquals(expectedResult, result);
     }
