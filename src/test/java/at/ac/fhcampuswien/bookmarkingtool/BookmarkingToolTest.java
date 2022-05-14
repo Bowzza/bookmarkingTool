@@ -12,15 +12,15 @@ public class BookmarkingToolTest {
 
         // Arrange
         Url url = new Url("https://www.fh-campuswien.ac.at/");
-        Url expectedResult = new Url("https://www.fh-campuswien.ac.at/");
-        Url result;
+        String expectedResult = new Url("https://www.fh-campuswien.ac.at/").getUrl();
+        String result;
         BookmarkingTool bookmarkingTool = new BookmarkingTool();
 
         // Act
         bookmarkingTool.bookmarkUrl(url);
-        result = bookmarkingTool.findUrl(url);
+        result = bookmarkingTool.getUrlList().get(0).getUrl();
 
         // Assert
-        assertEquals(expectedResult.getUrl(), result.getUrl());
+        assertEquals(expectedResult, result);
     }
 }
