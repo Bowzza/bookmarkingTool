@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BookmarkingToolAddingDuplicateTest {
 
     @Test
-    public void ensureBookmarkingDuplicateUrl() {
+    public void ensureBookmarkingDuplicateUrlIsNotInList() {
 
         // Arrange
         Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
@@ -39,6 +39,24 @@ public class BookmarkingToolAddingDuplicateTest {
         bookmarkingTool.bookmarkUrl(firstUrl);
         bookmarkingTool.bookmarkUrl(secondUrl);
         result = bookmarkingTool.getUrlList().get(0).getRating();
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureBookmarkingDuplicateUrlIsInList() {
+
+        // Arrange
+        Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
+        Url secondUrl = new Url("https://moodle.fh-campuswien.ac.at/");
+        String expectedResult = "https://moodle.fh-campuswien.ac.at/";
+        String result;
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        bookmarkingTool.bookmarkUrl(secondUrl);
+        result = bookmarkingTool.getUrlList().get(1).getUrl();
         // Assert
         assertEquals(expectedResult, result);
     }
