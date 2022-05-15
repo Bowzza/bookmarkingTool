@@ -65,7 +65,7 @@ public class BookmarkingToolAddingDuplicateTest {
     }
 
     @Test
-    public void ensureRatingIsNotIncreasedWhenBookmarkingDifferentUrl() {
+    public void ensureRatingFromFirstUrlIsNotIncreasedWhenBookmarkingDifferentUrl () {
 
         // Arrange
         Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
@@ -78,6 +78,25 @@ public class BookmarkingToolAddingDuplicateTest {
         bookmarkingTool.bookmarkUrl(firstUrl);
         bookmarkingTool.bookmarkUrl(secondUrl);
         result = bookmarkingTool.getUrlList().get(0).getRating();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @Test
+    public void ensureRatingFromSecondUrlIsNotIncreasedWhenBookmarkingDifferentUrl () {
+
+        // Arrange
+        Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
+        Url secondUrl = new Url("https://moodle.fh-campuswien.ac.at/");
+        int expectedResult = 0;
+        int result;
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        bookmarkingTool.bookmarkUrl(secondUrl);
+        result = bookmarkingTool.getUrlList().get(1).getRating();
 
         // Assert
         assertEquals(expectedResult, result);
