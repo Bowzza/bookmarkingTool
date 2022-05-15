@@ -17,6 +17,7 @@ public class BookmarkingTool {
         for (Url urlItem: urlList) {
             if(urlItem.getUrl().equals(url.getUrl())) {
                 urlItem.setRating(url.getRating() + 1);
+                return;
             }
         }
         try {
