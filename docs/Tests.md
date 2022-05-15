@@ -126,3 +126,11 @@ Test for adding a duplicate bookmark
 Input:
 First URL = https://www.fh-campuswien.ac.at/
 Second URL = https://www.fh-campuswien.ac.at/
+
+###Test 2
+Description:
+Test if rating is increased when adding a duplicate bookmark
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = https://www.fh-campuswien.ac.at/
