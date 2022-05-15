@@ -115,3 +115,14 @@ Test for adding a keyword with a space to an URL
 Input:
 URL = https://www.fh-campuswien.ac.at/
 keyword = " "
+
+
+## When adding duplicate bookmark it will not be added, instead the rating of that bookmark will be increased
+
+###Test 1
+Description:
+Test for adding a duplicate bookmark
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = https://www.fh-campuswien.ac.at/
