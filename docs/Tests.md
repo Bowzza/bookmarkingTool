@@ -151,7 +151,7 @@ Input:
 First URL = https://www.fh-campuswien.ac.at/
 Second URL = https://moodle.fh-campuswien.ac.at/
 
-###Test 2
+###Test 5
 Description:
 Test if rating from second url doesn't change when different bookmark has been added
 
