@@ -86,8 +86,16 @@ URL = ""
 
 ###Test 1
 Description:
-Test for adding a valid keyword to a URL
+Test for adding a valid keyword to an URL
 
 Input:
 URL = https://www.fh-campuswien.ac.at/
 keyword = fh campus
+
+###Test 2
+Description:
+Test for adding a null keyword to an URL
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+keyword = null
