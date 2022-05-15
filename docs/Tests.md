@@ -99,3 +99,19 @@ Test for adding a null keyword to an URL
 Input:
 URL = https://www.fh-campuswien.ac.at/
 keyword = null
+
+###Test 3
+Description:
+Test for adding a keyword without any data to an URL
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+keyword = ""
+
+###Test 4
+Description:
+Test for adding a keyword with a space to an URL
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+keyword = " "
