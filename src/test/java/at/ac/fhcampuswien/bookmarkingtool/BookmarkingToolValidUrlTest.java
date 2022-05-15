@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class BookmarkingToolTestValidUrl {
+public class BookmarkingToolValidUrlTest {
 
     @ParameterizedTest
     @CsvSource({"https://www.fh-campuswien.ac.at/, https://www.fh-campuswien.ac.at/", "http://www.fh-campuswien.ac.at/, http://www.fh-campuswien.ac.at/"})
@@ -56,23 +56,6 @@ public class BookmarkingToolTestValidUrl {
         // Act
         result = exception.getMessage();
 
-        // Assert
-        assertEquals(expectedResult, result);
-    }
-
-    @Test
-    public void ensureAddingValidKeywordToUrl() {
-
-        // Arrange
-        Url url = new Url("https://www.fh-campuswien.ac.at/");
-        String expectedResult = "fh campus";
-        String result;
-        BookmarkingTool bookmarkingTool = new BookmarkingTool();
-
-        // Act
-        bookmarkingTool.bookmarkUrl(url);
-        bookmarkingTool.getUrlList().get(0).setKeyword("fh campus");
-        result = bookmarkingTool.getUrlList().get(0).getKeyword();
         // Assert
         assertEquals(expectedResult, result);
     }
