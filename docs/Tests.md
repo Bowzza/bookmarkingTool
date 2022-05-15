@@ -81,3 +81,13 @@ Test for bookmarking without any data
 Input:
 URL = ""
 
+
+## Tag a URL with a keyword
+
+###Test 1
+Description:
+Test for adding a valid keyword to a URL
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+keyword = fh campus
