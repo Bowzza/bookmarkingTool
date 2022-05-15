@@ -18,11 +18,11 @@ public class Url {
     }
 
     public int getRating() {
-        throw new UnsupportedOperationException();
+        return rating;
     }
 
     public void setRating(int rating) {
-        throw new UnsupportedOperationException();
+        this.rating = rating;
     }
 
     public void setKeyword(String keyword) {
