@@ -14,6 +14,9 @@ public class BookmarkingTool {
 
     public void bookmarkUrl(Url url) {
         if (url == null) throw new IllegalArgumentException("Url must not be null");
+        for (Url urlItem: urlList) {
+            if(urlItem.getUrl().equals(url.getUrl())) return;
+        }
         try {
             new URL(url.getUrl()).toURI();
         } catch (MalformedURLException | URISyntaxException e) {
