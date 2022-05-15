@@ -17,6 +17,7 @@ public class Url {
     }
 
     public void setKeyword(String keyword) {
+        if (keyword == null) throw new IllegalArgumentException("Keyword must not be null");
         this.keyword = keyword;
     }
 }
