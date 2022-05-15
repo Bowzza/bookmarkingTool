@@ -24,4 +24,22 @@ public class BookmarkingToolAddingDuplicateTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureRatingIsIncreasedWhenBookmarkingDuplicateUrl() {
+
+        // Arrange
+        Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
+        Url secondUrl = new Url("https://www.fh-campuswien.ac.at/");
+        int expectedResult = 1;
+        int result;
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        bookmarkingTool.bookmarkUrl(secondUrl);
+        result = bookmarkingTool.getUrlList().get(0).getRating();
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
