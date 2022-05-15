@@ -13,10 +13,10 @@ public class Url {
     }
 
     public String getKeyword() {
-        throw new UnsupportedOperationException();
+        return keyword;
     }
 
     public void setKeyword(String keyword) {
-        throw new UnsupportedOperationException();
+        this.keyword = keyword;
     }
 }
