@@ -3,6 +3,7 @@ package at.ac.fhcampuswien.bookmarkingtool.model;
 public class Url {
     private String url;
     private String keyword;
+    private int rating;
 
     public Url(String url) {
         this.url = url;
@@ -14,6 +15,14 @@ public class Url {
 
     public String getKeyword() {
         return keyword;
+    }
+
+    public int getRating() {
+        throw new UnsupportedOperationException();
+    }
+
+    public void setRating(int rating) {
+        throw new UnsupportedOperationException();
     }
 
     public void setKeyword(String keyword) {
