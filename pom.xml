@@ -169,6 +169,8 @@
                         <outputFormat>HTML</outputFormat>
                     </outputFormats>
                     <!--<verbose>true</verbose>-->
+                    <mutationThreshold>90</mutationThreshold>
+                    <coverageThreshold>90</coverageThreshold>
                 </configuration>
 
             </plugin>
