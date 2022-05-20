@@ -22,6 +22,7 @@ public class BookmarkingToolValidUrlTest {
         // Act
         bookmarkingTool.bookmarkUrl(url);
         result = bookmarkingTool.getUrlList().get(0).getUrl();
+
         // Assert
         assertEquals(expectedResult, result);
     }

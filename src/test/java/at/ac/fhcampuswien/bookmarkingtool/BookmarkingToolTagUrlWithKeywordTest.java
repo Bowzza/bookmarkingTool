@@ -24,6 +24,7 @@ public class BookmarkingToolTagUrlWithKeywordTest {
         bookmarkingTool.bookmarkUrl(url);
         bookmarkingTool.getUrlList().get(0).setKeyword(keyword);
         result = bookmarkingTool.getUrlList().get(0).getKeyword();
+
         // Assert
         assertEquals(expectedResult, result);
     }
