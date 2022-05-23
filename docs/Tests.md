@@ -170,3 +170,10 @@ Input:
 First URL = http://www.fh-campuswien.ac.at/
 Second URL = http://moodle.fh-campuswien.ac.at/
 
+###Test 2
+Description:
+Test if there is one secure url
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = http://moodle.fh-campuswien.ac.at/
