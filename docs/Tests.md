@@ -158,3 +158,15 @@ Test if rating from second url doesn't change when different bookmark has been a
 Input:
 First URL = https://www.fh-campuswien.ac.at/
 Second URL = https://moodle.fh-campuswien.ac.at/
+
+
+## As a user I want to know how many of my bookmarks are secure URLs
+
+###Test 1
+Description:
+Test if there is no secure url
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+Second URL = http://moodle.fh-campuswien.ac.at/
+
