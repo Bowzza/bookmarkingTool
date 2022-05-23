@@ -28,4 +28,25 @@ public class BookmarkingToolCountSecureURLsTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureCountingMultipleSecureUrls() {
+
+        // Arrange
+        Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
+        Url secondUrl = new Url("http://moodle.fh-campuswien.ac.at/");
+        Url thirdUrl = new Url("https://moodle.fh-campuswien.ac.at/");
+        int result;
+        int expectedResult = 2;
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        bookmarkingTool.bookmarkUrl(secondUrl);
+        bookmarkingTool.bookmarkUrl(thirdUrl);
+        result = bookmarkingTool.countSecureUrls();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
