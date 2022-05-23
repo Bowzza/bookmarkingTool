@@ -158,7 +158,6 @@
                         <!-- Example: <param>lapr.project.model.*</param> -->
                         <param>at.ac.fhcampuswien.bookmarkingtool.*</param>
                     </targetClasses>
-
                     <targetTests>
                         <!-- Example: <param>lapr.project.utils.*</param> -->
                         <param>at.ac.fhcampuswien.bookmarkingtool.*</param>
