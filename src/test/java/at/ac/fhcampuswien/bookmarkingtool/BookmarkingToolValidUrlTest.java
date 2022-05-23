@@ -45,7 +45,14 @@ public class BookmarkingToolValidUrlTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"://www.fh-campuswien.ac.at/, no protocol: ://www.fh-campuswien.ac.at/", "htt://www.fh-campuswien.ac.at/, unknown protocol: htt", "httpswww.fh-campuswien.ac.at/, no protocol: httpswww.fh-campuswien.ac.at/,", "https/:/www.fh-campuswien.ac.at/, no protocol: https/:/www.fh-campuswien.ac.at/", "https://www.fh-campuswi^n.ac.at/, Illegal character in authority at index 8: https://www.fh-campuswi^n.ac.at/", "' ', 'no protocol:  '", "https://www.fh-cam puswien.ac.at/, Illegal character in authority at index 8: https://www.fh-cam puswien.ac.at/", "'', 'no protocol: '"})
+    @CsvSource({"://www.fh-campuswien.ac.at/, no protocol: ://www.fh-campuswien.ac.at/",
+            "htt://www.fh-campuswien.ac.at/, unknown protocol: htt",
+            "httpswww.fh-campuswien.ac.at/, no protocol: httpswww.fh-campuswien.ac.at/,",
+            "https/:/www.fh-campuswien.ac.at/, no protocol: https/:/www.fh-campuswien.ac.at/",
+            "https://www.fh-campuswi^n.ac.at/, Illegal character in authority at index 8: https://www.fh-campuswi^n.ac.at/",
+            "' ', 'no protocol:  '",
+            "https://www.fh-cam puswien.ac.at/, Illegal character in authority at index 8: https://www.fh-cam puswien.ac.at/",
+            "'', 'no protocol: '"})
     public void ensureBookmarkingUrlWithIllegalCharactersNoProtocolUnknownProtocol(String input, String expectedResult) {
 
         // Arrange

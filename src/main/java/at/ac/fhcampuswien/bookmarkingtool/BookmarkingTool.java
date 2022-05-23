@@ -29,6 +29,14 @@ public class BookmarkingTool {
         urlList.add(url);
     }
 
+    public int countSecureUrls() {
+        int count = 0;
+        for (Url urlItem: urlList) {
+            if(urlItem.getUrl().startsWith("https")) count++;
+        }
+        return count;
+    }
+
     public List<Url> getUrlList() {
         return urlList;
     }
