@@ -158,7 +158,6 @@
                         <!-- Example: <param>lapr.project.model.*</param> -->
                         <param>at.ac.fhcampuswien.bookmarkingtool.*</param>
                     </targetClasses>
-
                     <targetTests>
                         <!-- Example: <param>lapr.project.utils.*</param> -->
                         <param>at.ac.fhcampuswien.bookmarkingtool.*</param>
@@ -169,11 +168,10 @@
                         <outputFormat>HTML</outputFormat>
                     </outputFormats>
                     <!--<verbose>true</verbose>-->
+                    <mutationThreshold>90</mutationThreshold>
+                    <coverageThreshold>90</coverageThreshold>
                 </configuration>
-
             </plugin>
-
         </plugins>
     </build>
-
 </project>
