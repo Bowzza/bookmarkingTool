@@ -34,4 +34,18 @@ public class Url {
         if (keyword.isEmpty() || keyword.trim().isEmpty()) throw new IllegalArgumentException("Keyword must not be empty");
         keywordList.add(keyword);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Url url = (Url) obj;
+        return this.url.equals(url.url) &&
+                keywordList.equals(url.keywordList) &&
+                rating == url.rating;
+    }
 }

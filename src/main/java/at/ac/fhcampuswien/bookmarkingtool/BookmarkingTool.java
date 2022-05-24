@@ -37,6 +37,14 @@ public class BookmarkingTool {
         return count;
     }
 
+    public List<Url> filterByKeyword(String keyword) {
+        List<Url> filteredList = new ArrayList<>();
+        for (Url urlItem: urlList) {
+            if(urlItem.getKeyword().contains(keyword)) filteredList.add(urlItem);
+        }
+        return filteredList;
+    }
+
     public List<Url> getUrlList() {
         return urlList;
     }

@@ -198,9 +198,9 @@ Input:
 First URL = http://www.fh-campuswien.ac.at/
 First keyword = fh campus
 Second URL = http://moodle.fh-campuswien.ac.at/
-First keyword = fh campus
+Second keyword = fh campus
 Third URL = http://portal.fh-campuswien.ac.at/
-First keyword = fh campus
+Third keyword = fh campus
 Filter keyword = fhcampus
 
 ###Test 2
@@ -211,9 +211,9 @@ Input:
 First URL = http://www.fh-campuswien.ac.at/
 First keyword = fh campus
 Second URL = http://moodle.fh-campuswien.ac.at/
-First keyword = moodle fh campus
+Second keyword = moodle fh campus
 Third URL = http://portal.fh-campuswien.ac.at/
-First keyword = portal fh campus
+Third keyword = portal fh campus
 Filter keyword = moodle fh campus
 
 ###Test 3
@@ -224,7 +224,7 @@ Input:
 First URL = http://www.fh-campuswien.ac.at/
 First keyword = fh campus
 Second URL = http://moodle.fh-campuswien.ac.at/
-First keyword = fh campus
+Second keyword = fh campus
 Third URL = http://portal.fh-campuswien.ac.at/
-First keyword = fh campus
+Third keyword = fh campus
 Filter keyword = fh campus
