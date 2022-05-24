@@ -186,3 +186,51 @@ Input:
 First URL = https://www.fh-campuswien.ac.at/
 Second URL = http://moodle.fh-campuswien.ac.at/
 Third URL = https://moodle.fh-campuswien.ac.at/
+
+
+## As a user I want a new bookmark to become associated with other bookmarks that are from the same domain
+
+###Test 1
+Description:
+Test if there are no domains which are associated with each other
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+Second URL = http://moodle.fh-campuswien.ac.at/
+Third URL = http://portal.fh-campuswien.ac.at/
+
+###Test 2
+Description:
+Test if there is one domain which is associated with another domain
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+Second URL = http://moodle.fh-campuswien.ac.at/
+Third URL = http://www.fh-campuswien.ac.at/
+
+###Test 3
+Description:
+Test if all domains are associated with each other
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+Second URL = http://www.fh-campuswien.ac.at/
+Third URL = http://www.fh-campuswien.ac.at/
+
+###Test 4
+Description:
+Test if all domains are associated with each other even though they have different subdirectories
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/studien-und-lehrgangsangebot.html
+Second URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/studien-und-lehrgangsangebot/detail/bioengineering-bachelor.html
+Third URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/bewerbung-und-aufnahme.html
+
+###Test 5
+Description:
+Test if domains are associated with each other, even though they have different schemes
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = http://moodle.fh-campuswien.ac.at/
+Third URL = http://www.fh-campuswien.ac.at/
