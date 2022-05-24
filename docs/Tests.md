@@ -267,3 +267,73 @@ Second keyword = fh campus
 Third URL = http://portal.fh-campuswien.ac.at/
 Third keyword = fh campus
 Filter keyword = fh campus
+
+
+##As a user I want to be able to filter bookmarks by one or more keywordsMay, 202235TDD Workshop #3
+
+###Test 1
+Description:
+Test if you get no bookmark when filtering bookmarks by multiple keywords
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+First keyword list = fh, campus
+Second URL = http://moodle.fh-campuswien.ac.at/
+Second keyword list = moodle, campus
+Third URL = http://portal.fh-campuswien.ac.at/
+Third keyword list = portal, campus
+Filter keyword list = fh campus, wien
+
+
+###Test 2
+Description:
+Test if you get one bookmark when filtering bookmarks by multiple keywords, one matching keyword
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+First keyword list = fh, campus
+Second URL = http://moodle.fh-campuswien.ac.at/
+Second keyword list = moodle, campus
+Third URL = http://portal.fh-campuswien.ac.at/
+Third keyword list = portal, campus
+Filter keyword list = portal, wien
+
+###Test 3
+Description:
+Test if you get one bookmark when filtering bookmarks by multiple keywords, three matching keywords
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+First keyword list = ac, at
+Second URL = http://moodle.fh-campuswien.ac.at/
+Second keyword list = moodle, campus, fh
+Third URL = http://portal.fh-campuswien.ac.at/
+Third keyword list = ac, at
+Filter keyword list = moodle, campus, fh
+
+###Test 4
+Description:
+Test if you get all bookmarks when filtering bookmarks by multiple keywords
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+First keyword list = fh, campus
+Second URL = http://moodle.fh-campuswien.ac.at/
+Second keyword list = moodle, campus
+Third URL = http://portal.fh-campuswien.ac.at/
+Third keyword list = portal, campus
+Filter keyword list = fh, moodle, portal
+
+
+###Test 5
+Description:
+Test if you get no bookmarks when filtering bookmarks by an empty list
+
+Input:
+First URL = http://www.fh-campuswien.ac.at/
+First keyword list = fh, campus
+Second URL = http://moodle.fh-campuswien.ac.at/
+Second keyword list = moodle, campus
+Third URL = http://portal.fh-campuswien.ac.at/
+Third keyword list = portal, campus
+Filter keyword list = []
