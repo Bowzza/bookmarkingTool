@@ -18,13 +18,13 @@ public class BookmarkingToolFilterByOneKeywordTest {
     @MethodSource("generateData")
     public void ensureFilteringByOneKeyword(String firstParam, String firstKeyword, String secondParam,
                                          String secondKeyword, String thirdParam, String thirdKeyword,
-                                         String filterKeyword, List<Url> expectedResult) {
+                                         String filterKeyword, List<String> expectedResult) {
 
         // Arrange
         Url firstUrl = new Url(firstParam);
         Url secondUrl = new Url(secondParam);
         Url thirdUrl = new Url(thirdParam);
-        List<Url> result;
+        List<String> result;
         BookmarkingTool bookmarkingTool = new BookmarkingTool();
 
         // Act
@@ -43,28 +43,20 @@ public class BookmarkingToolFilterByOneKeywordTest {
     static Stream<Arguments> generateData() {
         return Stream.of(
                 Arguments.of("http://www.fh-campuswien.ac.at/", "fh campus", "http://moodle.fh-campuswien.ac.at/",
-                        "fh campus", "http://portal.fh-campuswien.ac.at/", "fh campus", "fhcampus", new ArrayList<Url>()
+                        "fh campus", "http://portal.fh-campuswien.ac.at/", "fh campus", "fhcampus", new ArrayList<String>()
                 ),
                 Arguments.of("http://www.fh-campuswien.ac.at/", "fh campus", "http://moodle.fh-campuswien.ac.at/",
                         "moodle fh campus", "http://portal.fh-campuswien.ac.at/", "portal fh campus", "moodle fh campus",
-                        new ArrayList<Url>() {{
-                            Url url = new Url("http://moodle.fh-campuswien.ac.at/");
-                            url.addKeyword("moodle fh campus");
-                            add(url);
+                        new ArrayList<String>() {{
+                            add("http://moodle.fh-campuswien.ac.at/");
                         }}
                 ),
                 Arguments.of("http://www.fh-campuswien.ac.at/", "fh campus", "http://moodle.fh-campuswien.ac.at/",
                         "fh campus", "http://portal.fh-campuswien.ac.at/", "fh campus", "fh campus",
-                        new ArrayList<Url>() {{
-                            Url firstUrl = new Url("http://www.fh-campuswien.ac.at/");
-                            firstUrl.addKeyword("fh campus");
-                            Url secondUrl = new Url("http://moodle.fh-campuswien.ac.at/");
-                            secondUrl.addKeyword("fh campus");
-                            Url thirdUrl = new Url("http://portal.fh-campuswien.ac.at/");
-                            thirdUrl.addKeyword("fh campus");
-                            add(firstUrl);
-                            add(secondUrl);
-                            add(thirdUrl);
+                        new ArrayList<String>() {{
+                            add("http://www.fh-campuswien.ac.at/");
+                            add("http://moodle.fh-campuswien.ac.at/");
+                            add("http://portal.fh-campuswien.ac.at/");
                         }}
                 )
         );

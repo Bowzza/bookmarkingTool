@@ -37,10 +37,10 @@ public class BookmarkingTool {
         return count;
     }
 
-    public List<Url> filterByKeyword(String keyword) {
-        List<Url> filteredList = new ArrayList<>();
+    public List<String> filterByKeyword(String keyword) {
+        List<String> filteredList = new ArrayList<>();
         for (Url urlItem: urlList) {
-            if(urlItem.getKeyword().contains(keyword)) filteredList.add(urlItem);
+            if(urlItem.getKeyword().contains(keyword)) filteredList.add(urlItem.getUrl());
         }
         return filteredList;
     }
