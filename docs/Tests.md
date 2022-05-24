@@ -188,49 +188,43 @@ Second URL = http://moodle.fh-campuswien.ac.at/
 Third URL = https://moodle.fh-campuswien.ac.at/
 
 
-## As a user I want a new bookmark to become associated with other bookmarks that are from the same domain
+## As a user I want to be able to filter bookmarks by one keyword
 
 ###Test 1
 Description:
-Test if there are no domains which are associated with each other
+Test if you get no bookmark when filtering bookmarks by one keyword
 
 Input:
 First URL = http://www.fh-campuswien.ac.at/
+First keyword = fh campus
 Second URL = http://moodle.fh-campuswien.ac.at/
+First keyword = fh campus
 Third URL = http://portal.fh-campuswien.ac.at/
+First keyword = fh campus
+Filter keyword = fhcampus
 
 ###Test 2
 Description:
-Test if there is one domain which is associated with another domain
+Test if you get one bookmark when filtering bookmarks by one keyword
 
 Input:
 First URL = http://www.fh-campuswien.ac.at/
+First keyword = fh campus
 Second URL = http://moodle.fh-campuswien.ac.at/
-Third URL = http://www.fh-campuswien.ac.at/
+First keyword = moodle fh campus
+Third URL = http://portal.fh-campuswien.ac.at/
+First keyword = portal fh campus
+Filter keyword = moodle fh campus
 
 ###Test 3
 Description:
-Test if all domains are associated with each other
+Test if you get all bookmarks when filtering bookmarks by one keyword
 
 Input:
 First URL = http://www.fh-campuswien.ac.at/
-Second URL = http://www.fh-campuswien.ac.at/
-Third URL = http://www.fh-campuswien.ac.at/
-
-###Test 4
-Description:
-Test if all domains are associated with each other even though they have different subdirectories
-
-Input:
-First URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/studien-und-lehrgangsangebot.html
-Second URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/studien-und-lehrgangsangebot/detail/bioengineering-bachelor.html
-Third URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/bewerbung-und-aufnahme.html
-
-###Test 5
-Description:
-Test if domains are associated with each other, even though they have different schemes
-
-Input:
-First URL = https://www.fh-campuswien.ac.at/
+First keyword = fh campus
 Second URL = http://moodle.fh-campuswien.ac.at/
-Third URL = http://www.fh-campuswien.ac.at/
+First keyword = fh campus
+Third URL = http://portal.fh-campuswien.ac.at/
+First keyword = fh campus
+Filter keyword = fh campus
