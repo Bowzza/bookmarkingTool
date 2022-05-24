@@ -1,20 +1,24 @@
 package at.ac.fhcampuswien.bookmarkingtool.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Url {
     private String url;
-    private String keyword;
+    private List<String> keywordList;
     private int rating;
 
     public Url(String url) {
         this.url = url;
+        this.keywordList = new ArrayList<>();
     }
 
     public String getUrl() {
         return url;
     }
 
-    public String getKeyword() {
-        return keyword;
+    public List<String> getKeyword() {
+        return keywordList;
     }
 
     public int getRating() {
@@ -25,9 +29,9 @@ public class Url {
         this.rating = rating;
     }
 
-    public void setKeyword(String keyword) {
+    public void addKeyword(String keyword) {
         if (keyword == null) throw new IllegalArgumentException("Keyword must not be null");
         if (keyword.isEmpty() || keyword.trim().isEmpty()) throw new IllegalArgumentException("Keyword must not be empty");
-        this.keyword = keyword;
+        keywordList.add(keyword);
     }
 }

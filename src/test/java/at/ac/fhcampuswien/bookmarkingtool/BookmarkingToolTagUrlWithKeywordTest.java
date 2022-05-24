@@ -22,8 +22,8 @@ public class BookmarkingToolTagUrlWithKeywordTest {
 
         // Act
         bookmarkingTool.bookmarkUrl(url);
-        bookmarkingTool.getUrlList().get(0).setKeyword(keyword);
-        result = bookmarkingTool.getUrlList().get(0).getKeyword();
+        bookmarkingTool.getUrlList().get(0).addKeyword(keyword);
+        result = bookmarkingTool.getUrlList().get(0).getKeyword().get(0);
 
         // Assert
         assertEquals(expectedResult, result);
@@ -42,7 +42,7 @@ public class BookmarkingToolTagUrlWithKeywordTest {
 
         // Act
         bookmarkingTool.bookmarkUrl(url);
-        exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.getUrlList().get(0).setKeyword(keyword));
+        exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.getUrlList().get(0).addKeyword(keyword));
         result = exception.getMessage();
 
         // Assert
@@ -61,7 +61,7 @@ public class BookmarkingToolTagUrlWithKeywordTest {
 
         // Act
         bookmarkingTool.bookmarkUrl(url);
-        exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.getUrlList().get(0).setKeyword(input));
+        exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.getUrlList().get(0).addKeyword(input));
         result = exception.getMessage();
 
         // Assert
