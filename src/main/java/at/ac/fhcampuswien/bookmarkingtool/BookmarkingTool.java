@@ -5,8 +5,7 @@ import at.ac.fhcampuswien.bookmarkingtool.model.Url;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class BookmarkingTool {
 
@@ -35,6 +34,25 @@ public class BookmarkingTool {
             if(urlItem.getUrl().startsWith("https")) count++;
         }
         return count;
+    }
+
+    public List<String> associateDomain() {
+        Set<String> set = new HashSet<>();
+        int firstIndex = 0;
+        int secondIndex = 0;
+        for (Url firstUrl: urlList) {
+            for (Url secondUrl: urlList) {
+                if(firstUrl.getDomain().equals(secondUrl.getDomain()) && firstIndex != secondIndex) {
+                    set.add(firstUrl.getUrl());
+                }
+                secondIndex++;
+            }
+            firstIndex++;
+            secondIndex=0;
+        }
+        List<String> returnList = new ArrayList<>(set);
+        Collections.sort(returnList);
+        return returnList;
     }
 
     public List<String> filterByKeyword(String keyword) {

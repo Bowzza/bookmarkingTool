@@ -7,10 +7,12 @@ public class Url {
     private String url;
     private List<String> keywordList;
     private int rating;
+    private String domain;
 
     public Url(String url) {
         this.url = url;
         this.keywordList = new ArrayList<>();
+        this.domain = getDomainFromUrl(url);
     }
 
     public String getUrl() {
@@ -33,5 +35,16 @@ public class Url {
         if (keyword == null) throw new IllegalArgumentException("Keyword must not be null");
         if (keyword.isEmpty() || keyword.trim().isEmpty()) throw new IllegalArgumentException("Keyword must not be empty");
         keywordList.add(keyword);
+    }
+
+    public String getDomain() {
+        return domain;
+    }
+
+    private String getDomainFromUrl(String url) {
+        if(!url.contains("/")) return "";
+        String[] parts = url.split("/");
+        if(parts.length >= 3) return parts[2];
+        return "";
     }
 }

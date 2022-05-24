@@ -206,18 +206,9 @@ Test if there is one domain which is associated with another domain
 Input:
 First URL = http://www.fh-campuswien.ac.at/
 Second URL = http://moodle.fh-campuswien.ac.at/
-Third URL = http://www.fh-campuswien.ac.at/
+Third URL = http://www.fh-campuswien.ac.at/dd
 
 ###Test 3
-Description:
-Test if all domains are associated with each other
-
-Input:
-First URL = http://www.fh-campuswien.ac.at/
-Second URL = http://www.fh-campuswien.ac.at/
-Third URL = http://www.fh-campuswien.ac.at/
-
-###Test 4
 Description:
 Test if all domains are associated with each other even though they have different subdirectories
 
@@ -226,14 +217,14 @@ First URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/studien-und-leh
 Second URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/studien-und-lehrgangsangebot/detail/bioengineering-bachelor.html
 Third URL = http://www.fh-campuswien.ac.at/studium-weiterbildung/bewerbung-und-aufnahme.html
 
-###Test 5
+###Test 4
 Description:
 Test if domains are associated with each other, even though they have different schemes
 
 Input:
-First URL = https://www.fh-campuswien.ac.at/
-Second URL = http://moodle.fh-campuswien.ac.at/
-Third URL = http://www.fh-campuswien.ac.at/
+First URL = https://www.fh-campuswien.ac.at
+Second URL = http://moodle.fh-campuswien.ac.at
+Third URL = http://www.fh-campuswien.ac.at
 
 
 ## As a user I want to be able to filter bookmarks by one keyword
