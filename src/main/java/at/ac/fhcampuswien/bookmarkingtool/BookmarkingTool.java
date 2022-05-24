@@ -63,6 +63,18 @@ public class BookmarkingTool {
         return filteredList;
     }
 
+    public List<String> filterByMultipleKeywords(List<String> keywords) {
+        Set<String> set = new HashSet<>();
+        for (Url urlItem: urlList) {
+            for (String keyword: keywords) {
+                if(urlItem.getKeyword().contains(keyword)) set.add(urlItem.getUrl());
+            }
+        }
+        List<String> returnList = new ArrayList<>(set);
+        Collections.sort(returnList);
+        return returnList;
+    }
+
     public List<Url> getUrlList() {
         return urlList;
     }

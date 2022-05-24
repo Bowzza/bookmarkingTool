@@ -37,6 +37,12 @@ public class Url {
         keywordList.add(keyword);
     }
 
+    public void addKeywords(List<String> keywords) {
+        for (String keyword: keywords) {
+            addKeyword(keyword);
+        }
+    }
+
     public String getDomain() {
         return domain;
     }
