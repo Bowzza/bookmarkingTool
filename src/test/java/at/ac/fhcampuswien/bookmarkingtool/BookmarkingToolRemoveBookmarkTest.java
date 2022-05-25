@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.bookmarkingtool;
 
 import at.ac.fhcampuswien.bookmarkingtool.model.Url;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class BookmarkingToolRemoveBookmarkTest {
 
@@ -51,5 +53,25 @@ public class BookmarkingToolRemoveBookmarkTest {
                         }}
                 )
         );
+    }
+
+    @Test
+    public void ensureRemovingNullBookmark() {
+
+        //Arrange
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+        Url url = new Url("https://www.fh-campuswien.ac.at/");
+        String removeUrl = null;
+        String expectedResult = "Url must not be null";
+        Exception exception;
+        String result;
+
+        //Act
+        bookmarkingTool.bookmarkUrl(url);
+        exception = assertThrows(IllegalArgumentException.class, () -> bookmarkingTool.removeBookmarkUrl(removeUrl));
+        result = exception.getMessage();
+
+        //Assert
+        assertEquals(expectedResult, result);
     }
 }

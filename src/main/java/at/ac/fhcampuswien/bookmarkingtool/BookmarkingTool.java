@@ -29,6 +29,7 @@ public class BookmarkingTool {
     }
 
     public void removeBookmarkUrl(String url) {
+        if (url == null) throw new IllegalArgumentException("Url must not be null");
         urlList.removeIf(urlItem -> urlItem.getUrl().equals(url));
     }
 
