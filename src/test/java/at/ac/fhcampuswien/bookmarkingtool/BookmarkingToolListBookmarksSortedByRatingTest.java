@@ -55,4 +55,23 @@ public class BookmarkingToolListBookmarksSortedByRatingTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureListingBookmarksSortedByRatingWithOneEntry() {
+
+        // Arrange
+        Url firstUrl = new Url("https://www.fh-campuswien.ac.at/");
+        List<String> result;
+        List<String> expectedResult = new ArrayList<String>()  {{
+            add("https://www.fh-campuswien.ac.at/");
+        }};
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        result = bookmarkingTool.getUrlListByRating();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
