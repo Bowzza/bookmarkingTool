@@ -488,3 +488,9 @@ Third URL = https://www.fh-campuswien.ac.at/
 Fourth URL = http://moodle.fh-campuswien.ac.at/
 Fifth URL = http://moodle.fh-campuswien.ac.at/
 Sixth URL = https://moodle.fh-campuswien.ac.at/
+
+##Test 2
+Description:
+Test if no error occurs when sorting an empty list
+
+Input:
