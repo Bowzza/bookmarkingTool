@@ -18,7 +18,7 @@ public class BookmarkingTool {
         if (url == null) throw new IllegalArgumentException("Url must not be null");
         for (Url urlItem: urlList) {
             if(urlItem.getUrl().equals(url.getUrl())) {
-                urlItem.setRating(url.getRating() + 1);
+                urlItem.setRating(urlItem.getRating() + 1);
                 return;
             }
         }
@@ -94,5 +94,16 @@ public class BookmarkingTool {
             returnList.add(urlItem.getUrl());
         }
         return returnList;
+    }
+
+    public List<String> getUrlListByRating() {
+        List<Url> returnList = new ArrayList<>(urlList);
+        returnList.sort(Comparator.comparing(Url::getRating));
+        Collections.reverse(returnList);
+        List<String> urlListString = new ArrayList<>();
+        for (Url url: returnList) {
+            urlListString.add(url.getUrl());
+        }
+        return urlListString;
     }
 }
