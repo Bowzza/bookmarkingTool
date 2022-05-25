@@ -4,6 +4,7 @@ import at.ac.fhcampuswien.bookmarkingtool.model.Url;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +56,27 @@ public class BookmarkingToolRemoveKeywordTest {
         String secondKeyword = "moodle";
         String removeKeyword = null;
         String expectedResult = "Keyword must not be null";
+        Exception exception;
+        String result;
+
+        //Act
+        url.addKeyword(firstKeyword);
+        url.addKeyword(secondKeyword);
+        exception = assertThrows(IllegalArgumentException.class, () -> url.removeKeyword(removeKeyword));
+        result = exception.getMessage();
+
+        //Assert
+        assertEquals(expectedResult, result);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"'', Keyword must not be empty", "' ', Keyword must not be empty", "'\n', Keyword must not be empty", "\n, Keyword must not be null"})
+    public void ensureRemovingEmptyKeyword(String removeKeyword, String expectedResult) {
+
+        //Arrange
+        Url url = new Url("https://www.fh-campuswien.ac.at/");
+        String firstKeyword = "fh campus";
+        String secondKeyword = "moodle";
         Exception exception;
         String result;
 

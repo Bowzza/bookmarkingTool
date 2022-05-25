@@ -45,6 +45,7 @@ public class Url {
 
     public void removeKeyword(String keyword) {
         if (keyword == null) throw new IllegalArgumentException("Keyword must not be null");
+        if (keyword.isEmpty() || keyword.trim().isEmpty()) throw new IllegalArgumentException("Keyword must not be empty");
         keywordList.remove(keyword);
     }
 
