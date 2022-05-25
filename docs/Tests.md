@@ -494,3 +494,11 @@ Description:
 Test if no error occurs when sorting an empty list
 
 Input:
+
+
+##Test 3
+Description:
+Test if no error occurs when sorting a list with one element
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
