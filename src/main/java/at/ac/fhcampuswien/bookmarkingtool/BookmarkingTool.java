@@ -28,6 +28,10 @@ public class BookmarkingTool {
         urlList.add(url);
     }
 
+    public void removeBookmarkUrl(String url) {
+        urlList.removeIf(urlItem -> urlItem.getUrl().equals(url));
+    }
+
     public int countSecureUrls() {
         int count = 0;
         for (Url urlItem: urlList) {
@@ -77,5 +81,13 @@ public class BookmarkingTool {
 
     public List<Url> getUrlList() {
         return urlList;
+    }
+
+    public List<String> getUrlListString() {
+        List<String> returnList = new ArrayList<>();
+        for (Url urlItem: urlList) {
+            returnList.add(urlItem.getUrl());
+        }
+        return returnList;
     }
 }

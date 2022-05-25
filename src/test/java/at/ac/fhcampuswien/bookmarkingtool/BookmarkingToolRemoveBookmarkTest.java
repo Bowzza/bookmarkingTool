@@ -1,0 +1,55 @@
+package at.ac.fhcampuswien.bookmarkingtool;
+
+import at.ac.fhcampuswien.bookmarkingtool.model.Url;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class BookmarkingToolRemoveBookmarkTest {
+
+    @ParameterizedTest
+    @MethodSource("generateData")
+    public void ensureRemovingBookmark(String firstParameter, String secondParameter, String removeParameter, List<String> expectedResult) {
+
+        //Arrange
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+        Url firstUrl = new Url(firstParameter);
+        Url secondUrl = new Url(secondParameter);
+        Url removeUrl = new Url(removeParameter);
+        List<String> result;
+
+        //Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        bookmarkingTool.bookmarkUrl(secondUrl);
+        bookmarkingTool.removeBookmarkUrl(removeUrl.getUrl());
+        result = bookmarkingTool.getUrlListString();
+
+        //Assert
+        assertEquals(expectedResult, result);
+    }
+
+    static Stream<Arguments> generateData() {
+        return Stream.of(
+                Arguments.of("https://www.fh-campuswien.ac.at/", "https://moodle.fh-campuswien.ac.at/",
+                        "https://moodle.fh-campuswien.ac.at/",
+                        new ArrayList<String>() {{
+                            add("https://www.fh-campuswien.ac.at/");
+                        }}
+                ),
+
+                Arguments.of("https://www.fh-campuswien.ac.at/", "https://moodle.fh-campuswien.ac.at/",
+                        "https://portal.fh-campuswien.ac.at/",
+                        new ArrayList<String>() {{
+                            add("https://www.fh-campuswien.ac.at/");
+                            add("https://moodle.fh-campuswien.ac.at/");
+                        }}
+                )
+        );
+    }
+}
