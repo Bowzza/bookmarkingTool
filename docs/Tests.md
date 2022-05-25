@@ -473,3 +473,18 @@ Test if date gets added when adding a bookmark
 Input: 
 URL = https://www.fh-campuswien.ac.at/
 Date time formatter = "yyyy-MM-dd HH:mm:ss"
+
+
+###US11. As a user I want to list my bookmarks sorted by rating (highest to smallest)
+
+##Test 1
+Description:
+Test if you can sort bookmarks by rating
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = https://www.fh-campuswien.ac.at/
+Third URL = https://www.fh-campuswien.ac.at/
+Fourth URL = http://moodle.fh-campuswien.ac.at/
+Fifth URL = http://moodle.fh-campuswien.ac.at/
+Sixth URL = https://moodle.fh-campuswien.ac.at/
