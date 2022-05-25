@@ -430,3 +430,35 @@ Test if you can remove a null bookmark URL
 Input:
 URL = https://www.fh-campuswien.ac.at/
 Remove URL = null
+
+##Test 4
+Description:
+Test if you can remove a bookmark URL which is empty
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+Remove URL = ""
+
+##Test 5
+Description:
+Test if you can remove a bookmark URL which is a space
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+Remove URL = " "
+
+##Test 6
+Description:
+Test if you can remove a bookmark URL which is '\n'
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+Remove URL = "'\n'"
+
+##Test 7
+Description:
+Test if you can remove a bookmark URL which is \n
+
+Input:
+URL = https://www.fh-campuswien.ac.at/
+Remove URL = "\n"
