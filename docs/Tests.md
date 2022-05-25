@@ -401,3 +401,24 @@ Input:
 First keyword = fh campus
 Second keyword = moodle
 Remove keyword = "\n"
+
+
+###As a user I want to remove a URL bookmark
+
+##Test 1
+Description:
+Test if you can remove a URL which is in the bookmark list
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = https://moodle.fh-campuswien.ac.at/
+Remove URL = https://moodle.fh-campuswien.ac.at/
+
+##Test 2
+Description:
+Test if you can remove a URL which is not in the bookmark list
+
+Input:
+First URL = https://www.fh-campuswien.ac.at/
+Second URL = https://moodle.fh-campuswien.ac.at/
+Remove URL = https://portal.fh-campuswien.ac.at/
