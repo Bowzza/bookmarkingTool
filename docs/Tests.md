@@ -365,3 +365,39 @@ Input:
 First keyword = fh campus
 Second keyword = moodle
 Remove keyword = null
+
+##Test 4
+Description:
+Test if you can remove a keyword which is empty
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = ""
+
+##Test 5
+Description:
+Test if you can remove a keyword which is a space
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = " "
+
+##Test 6
+Description:
+Test if you can remove a keyword which is '\n'
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = "'\n'"
+
+##Test 7
+Description:
+Test if you can remove a keyword which is \n
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = "\n"
