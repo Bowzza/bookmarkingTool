@@ -1,5 +1,7 @@
 package at.ac.fhcampuswien.bookmarkingtool.model;
 
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,7 @@ public class Url {
     private List<String> keywordList;
     private int rating;
     private String domain;
+    private LocalDateTime date;
 
     public Url(String url) {
         this.url = url;
@@ -58,5 +61,13 @@ public class Url {
         String[] parts = url.split("/");
         if(parts.length >= 3) return parts[2];
         return "";
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 }

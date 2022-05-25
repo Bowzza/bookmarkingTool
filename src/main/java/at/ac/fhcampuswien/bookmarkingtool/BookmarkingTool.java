@@ -5,11 +5,14 @@ import at.ac.fhcampuswien.bookmarkingtool.model.Url;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class BookmarkingTool {
 
     private List<Url> urlList = new ArrayList<>();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public void bookmarkUrl(Url url) {
         if (url == null) throw new IllegalArgumentException("Url must not be null");
@@ -24,7 +27,7 @@ public class BookmarkingTool {
         } catch (MalformedURLException | URISyntaxException e) {
             throw new IllegalArgumentException(e.getMessage());
         }
-
+        url.setDate(LocalDateTime.parse(LocalDateTime.now().format(formatter), formatter));
         urlList.add(url);
     }
 
