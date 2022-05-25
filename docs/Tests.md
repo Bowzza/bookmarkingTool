@@ -515,3 +515,14 @@ Fourth URL = http://moodle.fh-campuswien.ac.at/
 Fifth URL = https://www.fh-campuswien.ac.at/
 Sixth URL = https://moodle.fh-campuswien.ac.at/
 
+##Test 5
+Description:
+Test if you can sort bookmarks by rating even though they are added at the end
+
+Input:
+First URL = https://moodle.fh-campuswien.ac.at/
+Second URL = http://moodle.fh-campuswien.ac.at/
+Third URL = http://moodle.fh-campuswien.ac.at/
+Fourth URL = https://www.fh-campuswien.ac.at/
+Fifth URL = https://www.fh-campuswien.ac.at/
+Sixth URL = https://www.fh-campuswien.ac.at/
