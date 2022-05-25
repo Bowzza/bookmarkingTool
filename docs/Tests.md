@@ -2,7 +2,7 @@
 # Tests
 
 
-## Bookmark URL
+##US01 Bookmark URL
 
 ###Test 1
 Description:
@@ -82,7 +82,7 @@ Input:
 URL = ""
 
 
-## Tag a URL with a keyword
+##US02 Tag a URL with a keyword
 
 ###Test 1
 Description:
@@ -117,7 +117,7 @@ URL = https://www.fh-campuswien.ac.at/
 keyword = " "
 
 
-## When adding duplicate bookmark it will not be added, instead the rating of that bookmark will be increased
+##US03 When adding duplicate bookmark it will not be added, instead the rating of that bookmark will be increased
 
 ###Test 1
 Description:
@@ -160,7 +160,7 @@ First URL = https://www.fh-campuswien.ac.at/
 Second URL = https://moodle.fh-campuswien.ac.at/
 
 
-## As a user I want to know how many of my bookmarks are secure URLs
+##US04 As a user I want to know how many of my bookmarks are secure URLs
 
 ###Test 1
 Description:
@@ -188,7 +188,7 @@ Second URL = http://moodle.fh-campuswien.ac.at/
 Third URL = https://moodle.fh-campuswien.ac.at/
 
 
-## As a user I want a new bookmark to become associated with other bookmarks that are from the same domain
+##US05 As a user I want a new bookmark to become associated with other bookmarks that are from the same domain
 
 ###Test 1
 Description:
@@ -227,7 +227,7 @@ Second URL = http://moodle.fh-campuswien.ac.at
 Third URL = http://www.fh-campuswien.ac.at
 
 
-## As a user I want to be able to filter bookmarks by one keyword
+##US06 As a user I want to be able to filter bookmarks by one keyword
 
 ###Test 1
 Description:
@@ -269,7 +269,7 @@ Third keyword = fh campus
 Filter keyword = fh campus
 
 
-##As a user I want to be able to filter bookmarks by one or more keywordsMay, 202235TDD Workshop #3
+##US07 As a user I want to be able to filter bookmarks by one or more keywords
 
 ###Test 1
 Description:
@@ -337,7 +337,7 @@ Third keyword list = portal, campus
 Filter keyword list = []
 
 
-###As a user I want to remove a TAG from a bookmark
+###US08 As a user I want to remove a TAG from a bookmark
 
 ##Test 1
 Description:
@@ -403,7 +403,7 @@ Second keyword = moodle
 Remove keyword = "\n"
 
 
-###As a user I want to remove a URL bookmark
+###US09 As a user I want to remove a URL bookmark
 
 ##Test 1
 Description:
@@ -462,3 +462,14 @@ Test if you can remove a bookmark URL which is \n
 Input:
 URL = https://www.fh-campuswien.ac.at/
 Remove URL = "\n"
+
+
+###US10 As a user I want to add a current date/time when I add a bookmark
+
+##Test 1
+Description:
+Test if date gets added when adding a bookmark
+
+Input: 
+URL = https://www.fh-campuswien.ac.at/
+Date time formatter = "yyyy-MM-dd HH:mm:ss"
