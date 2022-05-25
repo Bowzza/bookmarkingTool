@@ -40,4 +40,19 @@ public class BookmarkingToolListBookmarksSortedByRatingTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureListingBookmarksSortedByRatingWithEmptyList() {
+
+        // Arrange
+        List<String> result;
+        List<String> expectedResult = new ArrayList<>();
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        result = bookmarkingTool.getUrlListByRating();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
