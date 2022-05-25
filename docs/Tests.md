@@ -356,3 +356,12 @@ Input:
 First keyword = fh campus
 Second keyword = moodle
 Remove keyword = github
+
+##Test 3
+Description:
+Test if you can remove a null keyword
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = null
