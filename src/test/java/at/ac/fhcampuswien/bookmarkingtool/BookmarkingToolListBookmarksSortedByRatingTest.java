@@ -105,4 +105,35 @@ public class BookmarkingToolListBookmarksSortedByRatingTest {
         // Assert
         assertEquals(expectedResult, result);
     }
+
+    @Test
+    public void ensureListingBookmarksSortedByRatingAddedHighestRatingLast() {
+
+        // Arrange
+        Url firstUrl = new Url("https://moodle.fh-campuswien.ac.at/");
+        Url secondUrl = new Url("http://moodle.fh-campuswien.ac.at/");
+        Url thirdUrl = new Url("http://moodle.fh-campuswien.ac.at/");
+        Url fourthUrl = new Url("https://www.fh-campuswien.ac.at/");
+        Url fifthUrl = new Url("https://www.fh-campuswien.ac.at/");
+        Url sixthUrl = new Url("https://www.fh-campuswien.ac.at/");
+        List<String> result;
+        List<String> expectedResult = new ArrayList<String>()  {{
+            add("https://www.fh-campuswien.ac.at/");
+            add("http://moodle.fh-campuswien.ac.at/");
+            add("https://moodle.fh-campuswien.ac.at/");
+        }};
+        BookmarkingTool bookmarkingTool = new BookmarkingTool();
+
+        // Act
+        bookmarkingTool.bookmarkUrl(firstUrl);
+        bookmarkingTool.bookmarkUrl(secondUrl);
+        bookmarkingTool.bookmarkUrl(thirdUrl);
+        bookmarkingTool.bookmarkUrl(fourthUrl);
+        bookmarkingTool.bookmarkUrl(fifthUrl);
+        bookmarkingTool.bookmarkUrl(sixthUrl);
+        result = bookmarkingTool.getUrlListByRating();
+
+        // Assert
+        assertEquals(expectedResult, result);
+    }
 }
