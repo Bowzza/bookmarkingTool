@@ -284,7 +284,6 @@ Third URL = http://portal.fh-campuswien.ac.at/
 Third keyword list = portal, campus
 Filter keyword list = fh campus, wien
 
-
 ###Test 2
 Description:
 Test if you get one bookmark when filtering bookmarks by multiple keywords, one matching keyword
@@ -324,7 +323,6 @@ Third URL = http://portal.fh-campuswien.ac.at/
 Third keyword list = portal, campus
 Filter keyword list = fh, moodle, portal
 
-
 ###Test 5
 Description:
 Test if you get no bookmarks when filtering bookmarks by an empty list
@@ -337,3 +335,24 @@ Second keyword list = moodle, campus
 Third URL = http://portal.fh-campuswien.ac.at/
 Third keyword list = portal, campus
 Filter keyword list = []
+
+
+###As a user I want to remove a TAG from a bookmark
+
+##Test 1
+Description:
+Test if you can remove a keyword which is in the keyword list
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = moodle
+
+##Test 2
+Description:
+Test if you can remove a keyword which is not in the keyword list
+
+Input:
+First keyword = fh campus
+Second keyword = moodle
+Remove keyword = github
