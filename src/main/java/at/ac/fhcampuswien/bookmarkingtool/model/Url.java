@@ -43,6 +43,10 @@ public class Url {
         }
     }
 
+    public void removeKeyword(String keyword) {
+        keywordList.remove(keyword);
+    }
+
     public String getDomain() {
         return domain;
     }
