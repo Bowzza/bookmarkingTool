@@ -643,6 +643,8 @@ Input:
 URL = https://www.fh-campuswien.ac.at/
 Date time formatter = "yyyy-MM-dd HH:mm:ss"
 
+Expected result:
+Date and time = current date and time
 
 ###US11. As a user I want to list my bookmarks sorted by rating (highest to smallest)
 
